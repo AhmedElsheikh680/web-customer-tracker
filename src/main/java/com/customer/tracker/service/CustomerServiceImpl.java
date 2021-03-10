@@ -26,13 +26,15 @@ public class CustomerServiceImpl implements CustomerService {
 //}
 
     @Override
-    public Customer findById(Integer integer) {
-        return null;
+    public Customer findById(Integer id) {
+
+        return customerDao.findById(id).orElse(null);
     }
 
     @Override
-    public Customer save(Customer object) {
-        return null;
+    public Customer save(Customer customer) {
+
+        return customerDao.save(customer);
     }
 
     @Override
