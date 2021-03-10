@@ -23,15 +23,26 @@
                     <th>Enail</th>
                     <th>Actions</th>
                 </tr>
+
+                <!-- Construct An "update" Link With Customer Id-->
                 <c:forEach items="${customers}" var="tempCustomer">
                     <c:url var="updateLink" value="/customer/showFormForUpdate">
                         <c:param name="customerId" value="${tempCustomer.id}" />
+                    </c:url>
+
+                    <!-- Construct An "delete" Link With Customer Id -->
+                    <c:url var="deleteLink" value="/customer/delete">
+                        <c:param name="customerId" value="${tempCustomer.id}"/>
                     </c:url>
                     <tr>
                         <td>${tempCustomer.firstName}</td>
                         <td>${tempCustomer.lastName}</td>
                         <td>${tempCustomer.email}</td>
-                        <td><a href="${updateLink}">Update</a></td>
+                        <td>
+                            <a href="${updateLink}">Update</a>
+                            |
+                            <a onclick="if(!(confirm('Are You Sure You Want To Delete This Custoer?'))) return false" href="${deleteLink}">Delete</a>
+                        </td>
                     </tr>
                 </c:forEach>
             </table>
