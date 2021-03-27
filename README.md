@@ -3,7 +3,7 @@
  ### Customer Relationship Management - CRM
  So We Can Add Customers, Update, Delete And Also List All Customers In Our Database
  * Set up Database Dev Environment
- * List Customers
+ * Get A List Of Customers
  * Add A New Customer
  * Update A Customer
  * Delete A Customer
